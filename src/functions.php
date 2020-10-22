@@ -1,18 +1,27 @@
 <?php
 $template_directory = get_template_directory_uri();
 $template_dir = get_template_directory();
-$wp_content_dir = content_url();
-$site_url = site_url();
-$is_front_page = is_front_page();
-$is_404 = is_404();
-$is_category = is_category();
-$is_admin = is_admin();
+// $wp_content_dir = content_url();
+// $site_url = site_url();
+// $is_front_page = is_front_page();
+// $is_404 = is_404();
+// $is_category = is_category();
 
-// $address = get_option( 'contacts_address' );
-// $tel = get_option( 'contacts_tel' );
-// $tel_dry = preg_replace( '/\s/', '', $tel );
-// $email = get_option( 'contacts_email' );
-// $insta = get_option( 'contacts_insta' );
+$tel = get_option( 'contacts_tel' );
+$tel_dry = preg_replace( '/\s/', '', $tel );
+
+$tel_support_1 = get_option( 'contacts_tel_support_1' );
+$tel_support_1_dry = preg_replace( '/\s/', '', $tel_support_1 );
+
+$tel_support_2 = get_option( 'contacts_tel_support_2' );
+$tel_support_2_dry = preg_replace( '/\s/', '', $tel_support_2 );
+
+$address = get_option( 'contacts_address' );
+$full_address = get_option( 'contacts_full_address' );
+$email_1 = get_option( 'contacts_email_1' );
+$email_2 = get_option( 'contacts_email_2' );
+$coords = get_option( 'contacts_coords' );
+$zoom = get_option( 'contacts_zoom' );
 
 // Проверка поддержки webp браузером
 if ( strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' ) !== false || strpos( $_SERVER['HTTP_USER_AGENT'], ' Chrome/' ) !== false ) {
@@ -39,3 +48,10 @@ require $template_dir . '/inc/options-fields.php';
 
 // Подключение и настройка меню, атрибутов, классов, id
 require $template_dir . '/inc/menus.php';
+
+// Вставка секций в тело страниц
+require $template_dir . '/inc/get-sections.php';
+
+// Регистрация новых типов - продукция и категории
+require $template_dir . '/inc/register-post-types-and-taxonomies.php';
+

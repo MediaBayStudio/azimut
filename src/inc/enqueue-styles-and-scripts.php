@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 // Функция подключения стилей
 function enqueue_style( $style_name, $widths ) {
@@ -28,6 +28,8 @@ function enqueue_style( $style_name, $widths ) {
 
 // Подключаем свои стили и скрипты
 add_action( 'wp_enqueue_scripts', function() {
+  global $template_directory;
+
   $screen_widths = ['0', '420', '576', '768', '1024', '1440']; // на каких экранах подключать css
 
   wp_enqueue_style( 'theme-style', get_stylesheet_uri(), [], null );        // подключить стиль темы (default)
@@ -35,7 +37,6 @@ add_action( 'wp_enqueue_scripts', function() {
   // подключаем стили с помощью своей функции
   enqueue_style( 'style', $screen_widths );
 
-  #!!!styles
 
   enqueue_style( 'hover', '' ); // подключаем стили для эффектов при наведении
 
@@ -51,14 +52,14 @@ add_action( 'wp_enqueue_scripts', function() {
   foreach ( $scripts as $script_name ) {
     wp_enqueue_script( "{$script_name}", $template_directory . "/js/{$script_name}.js", [], null );
   }
-
+  
   // Отключаем стандартные jquery, jquery-migrate
   // лучше подключать свой jquery
   wp_deregister_script( 'jquery-core' );
   wp_deregister_script( 'jquery' );
 
-  // Подключаем свой jquery
-  wp_register_script( 'jquery-core', $template_directory . '/js/jquery-3.4.1.min.js', false, null, true );
+  // Подключаем свой jquery 3.5.1
+  wp_register_script( 'jquery-core', $template_directory . '/js/jquery.js', false, null, true );
   wp_register_script( 'jquery', false, ['jquery-core'], null, true );
   wp_enqueue_script( 'jquery' );
 
@@ -66,19 +67,15 @@ add_action( 'wp_enqueue_scripts', function() {
 
 // Убираем id и type в тегах script, добавляем нужным атрибут defer
   add_filter( 'script_loader_tag',   function( $html, $handle ) {
-
-    $defer_scripts = [
-				'slick.min',
-			'lazy.min',
-			'MobileMenu.min',
-			'svg4everybody.min',
-			'main'
-		];
-
-    foreach( $defer_scripts as $id ) {
-      if ( $id === $handle ) {
+    switch ( $handle ) {
+      case 'slick.min':
+      case 'lazy.min':
+      case 'MobileMenu.min':
+      case 'svg4everybody.min':
+      case 'main':
+      case 'contact-form-7':
         $html = str_replace( ' src', ' defer src', $html );
-      }
+        break;
     }
 
     $html = str_replace( " id='$handle-js' ", '', $html );

@@ -3,6 +3,14 @@
 @import '../../assets/mixins';
 @import '../../assets/variables';
 
+#wpadminbar {
+  display: none;
+}
+
+html[lang] {
+  margin: 0 !important;
+}
+
 a[href="#"] {
   opacity: .5;
   pointer-events: none;
@@ -15,6 +23,20 @@ body.no-scroll {
 // img.lazy {
 //   background: url('../img/img-placeholder.svg') center/cover no-repeat;
 // }
+
+.page-wrapper {
+
+}
+
+.sections-wrapper {
+
+}
+
+.sect {
+  &-title {
+    font: bold 22px/160% Rubik;
+  }
+}
 
 
 .cf7-form-field {

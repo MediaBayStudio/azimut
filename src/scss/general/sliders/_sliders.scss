@@ -15,13 +15,13 @@
 li.slick-active > .dot {
   cursor: default;
   transform: scale(2);
-  background: $red;
+  // background: $red;
 }
 
 .dots .dot {
   width: 6px;
   height: 6px;
-  background: $light;
+  // background: $light;
   border-radius: 50%;
   transition: transform .35s, color .35s
 }

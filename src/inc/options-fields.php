@@ -7,11 +7,15 @@
 
   add_action( 'admin_init', function() {
     $options = [
-      'tel'     =>  'Телефон',
-      'address' =>  'Адрес',
-      'email'   =>  'E-mail',
-      'coords'  =>  'Координаты маркера на карте',
-      'zoom'    =>  'Увеличение карты'
+      'tel'             =>  'Телефон',
+      'tel_support_1'   =>  'Телефон службы поддержки 1',
+      'tel_support_2'   =>  'Телефон службы поддержки 2',
+      'address'         =>  'Адрес',
+      'full_address'    =>  'Полный адрес',
+      'email_1'         =>  'E-mail 1',
+      'email_2'         =>  'E-mail 2',
+      'coords'          =>  'Координаты маркера на карте',
+      'zoom'            =>  'Увеличение карты'
     ];
 
     foreach ($options as $id => $name) {

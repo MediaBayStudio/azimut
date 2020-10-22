@@ -246,7 +246,7 @@
 
 
   if ($contactsForm) {
-    let $contactsFormBtn = q('button', $contactsForm),
+    let $contactsFormBtn = q('button', $contactsForm);
       // $uploadFilesBlock = id('uploadedfiles'),
       // $filesInput = id('files-input');
 

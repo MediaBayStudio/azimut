@@ -96,9 +96,8 @@ $checkbox_text_width: calc(100% - #{$checkbox_size + $checkbox_margin_right});
 }
 
 .field {
-  $field_fz: 16px;
   display: inline-block;
-  font: $field_fz/140% Montserrat;
+  font: 16px/140% Montserrat;
   position: relative;
 
   &__textarea,
@@ -120,7 +119,7 @@ $checkbox_text_width: calc(100% - #{$checkbox_size + $checkbox_margin_right});
       // border-bottom-color: $black;
 
       ~.field__text {
-        top: -$field_fz;
+        top: -16px;
         font-size: 11.5px;
       }
     }
@@ -170,7 +169,7 @@ $checkbox_text_width: calc(100% - #{$checkbox_size + $checkbox_margin_right});
 
 .uploadedfiles { // Блок с названиями загруженных файлов
   font: 14px/140% Montserrat;
-  color: $grey;
+  // color: $grey;
 
   &__file {
     display: inline-block;

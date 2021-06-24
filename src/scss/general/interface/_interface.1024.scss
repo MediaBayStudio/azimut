@@ -2,3 +2,122 @@
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
+.sections-wrapper {
+  position: relative;
+}
+
+@supports (offset-path: path("M1 0C1 164 196 279 448 279")) {
+  .index-airplane-route {
+    position: absolute;
+    // bottom: -165px;
+    bottom: -15px;
+    left: 0;
+    display: block;
+    z-index: -1;
+  }
+
+  .index-airplane-route__route {
+    display: block;
+    width: 775px;
+    height: 2725px;
+    background: url('../img/index-route.1024.svg') center/contain no-repeat;
+  }
+
+  .index-airplane-route__airplane,
+  .about-airplane-route__airplane {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    offset-anchor: 50% 50%;
+    // transform: rotate(180deg);
+    offset-path: path("M150 0C150 371 738.673 15 752.933 703C758.797 985.88 385 1325 385 1589C385 1749 774 1589 774 2119C774 2365 256.682 2723 0 2723");
+    offset-rotate: auto -22deg;
+    animation: move-along 50s infinite linear;
+
+    &:nth-of-type(2) {
+      animation-delay: 12s;
+    }
+
+    &:nth-of-type(3) {
+      animation-delay: 33s;
+    }
+
+    &:nth-of-type(3) {
+      animation-delay: 50s;
+    }
+
+    &:nth-of-type(3) {
+      animation-delay: 40s;
+    }
+  }
+
+  .about-airplane-route {
+    position: absolute;
+    display: inline-block;
+    top: -15px;
+    right: responsive('1024->1439', '0->430');
+    z-index: -1;
+  }
+
+  .about-airplane-route__route {
+    display: inline-block;
+    width: 800px;
+    height: 2930px;
+    background: url('../img/about-route.1024.svg') center/contain no-repeat;
+  }
+
+
+  .about-airplane-route__airplane {
+    offset-path: path("M802 0C802 366.549 512.692 179.032 512.692 368.246C512.692 608.37 237.326 365.701 237.326 615.158C237.326 864.615 44.2219 687.28 44.2219 1031.77C44.2219 1376.26 476.441 1052.13 476.441 1634.2C476.441 2046.57 44.2219 1993.96 44.2219 2299.42C44.2219 2604.88 465.287 2350.33 465.287 2647.3C465.287 2884.88 127.413 2912.03 1 2929");
+  }
+}
+
+@supports not (offset-path: path("M1 0C1 164 196 279 448 279")) {
+  .index-airplane-route {
+    position: absolute;
+    // bottom: 0;
+    // bottom: -185px;
+    bottom: -24px;
+    right: responsive('1024->1439', '-10->-3');
+    display: block;
+    z-index: -1;
+    width: 805px;
+    height: 2810px;
+    background: url('../img/index-air.1024.svg') center/contain no-repeat;
+  }
+
+  .index-airplane-route__route,
+  .about-airplane-route__route {
+    display: none;
+  }
+
+  .index-airplane-route__airplane,
+  .about-airplane-route__airplane {
+    display: none;
+  }
+
+  .about-airplane-route {
+    display: block;
+    position: absolute;
+    top: responsive('1024->1439', '-25->-155');
+    right: responsive('1024->1439', '-10->10');
+    width: responsive('1024->1439', '875->1200');
+    height: responsive('1024->1439', '3050->3500');
+    background: url('../img/about-air.1024.svg') center/contain no-repeat;
+    z-index: -1;
+  }
+
+  // .about-airplane-route__route {
+  //   display: none;
+  // }
+
+
+  .about-airplane-route__airplane {
+  }
+}

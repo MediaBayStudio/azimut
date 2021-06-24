@@ -2,3 +2,35 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.text-sect {
+  padding: 50px 0;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  &__title {
+    margin: 0;
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: start;
+  }
+  &__link {
+    margin: 0 0 8px;
+    grid-row: 2;
+    grid-column: 1;
+    align-self: end;
+    font-size: 16px;
+  }
+  &__text {
+    margin-left: 10px;
+    grid-row: 1/span 2;
+    grid-column: 2;
+    justify-self: end;
+    width: 450px;
+  }
+  &__p {
+    &:nth-last-child(n+2) {
+      
+    }
+  }
+}

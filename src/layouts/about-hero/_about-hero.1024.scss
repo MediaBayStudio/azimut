@@ -2,3 +2,19 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.about-hero {
+  padding-top: 80px;
+  &__title {
+    font-size: 24px;
+  }
+  &__descr {
+  }
+  &__feats {
+    > .feat {
+      &:nth-last-child(n+2) {
+        margin: 0 75px 0 0;
+      }
+    }
+  }
+}

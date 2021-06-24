@@ -2,3 +2,39 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.about {
+  &__gallery {
+    max-width: 275px;
+  }
+
+  &__title {}
+
+  &__descr {}
+
+  &__feats {}
+
+  &__partners {}
+}
+
+.feat {
+  &__top {}
+
+  &__bottom {}
+}
+
+.about-gallery {
+  &__nav {}
+
+  &__next {}
+}
+
+.partners {
+  &__title {}
+}
+
+.partners-slider {
+  &__slide {
+    &:nth-last-child(n+2) {}
+  }
+}

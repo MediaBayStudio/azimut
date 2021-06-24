@@ -2,3 +2,39 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.ftr {
+  &__logo {}
+
+  &__logo-img {}
+
+  &__copy {}
+
+  &__copy-top {}
+
+  &__copy-bottom {}
+
+  &__nav {}
+
+  &__nav-list {}
+
+  &__nav-li {
+    &:nth-last-child(n+2) {}
+  }
+
+  &__contacts-list {}
+
+  &__contacts-li {
+    &:nth-last-child(n+2) {}
+  }
+
+  &__contacts-tel {}
+
+  &__bottom {}
+
+  &__policy {}
+
+  &__dev {}
+
+  &__dev-link {}
+}

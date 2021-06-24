@@ -2,3 +2,72 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.hdr__burger {
+  &-box {}
+
+  &-inner {
+
+    &::after,
+    &::before {}
+
+    &::after {}
+
+    &::before {}
+  }
+
+  &.active {
+    .hdr__burger-inner {
+
+      &::before {}
+
+      &::after {}
+    }
+  }
+}
+
+.menu {
+  opacity: 1;
+  visibility: visible;
+  // width: 225px;
+  width: responsive('1024->1439', '225->280');
+  &.active {}
+
+  &__cnt {
+    width: 100%;
+    max-width: none;
+    transform: none !important;
+    font-size: 18px;
+  }
+
+  &__logo {
+    margin-left: -20px;
+  }
+
+  &__logo-img {
+    width: 185px;
+    height: 50px;
+  }
+
+  &__tel {
+    display: none;
+  }
+
+  &__nav {
+    margin: 15.35vh 0 auto;
+  }
+
+  &__nav-list {}
+
+  &__nav-li {
+    transition: color .5s, text-shadow .5s;
+    &:hover {
+      color: $blue;
+      // text-shadow: .25px .25px 0, -.25px -.25px 0, .5px .5px 0, -.5px -.5px 0;
+      text-shadow: .4px .4px 0, -.4px -.4px 0;
+    }
+    &:nth-last-child(n+2) {
+      margin: 0 0 60px;
+    }
+  }
+}

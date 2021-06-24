@@ -1,6 +1,6 @@
 ;
 (function() {
-  let $contactsForm = id('contacts-form');
+  let $callbackForm = id('callback-form');
 
   let formValidator = function(params) {
     let $form = params.form,
@@ -93,10 +93,11 @@
               let elementType = $formElement.type,
                 pattern = rule.pattern;
 
+              // Если элемент не чекнут или пустой
               if (((elementType === 'checkbox' || elementType === 'radio') && !$formElement.checked) ||
                 elementValue === '') {
 
-                if (or) {
+                if (or && $orFormElement) {
                   if ($orFormElement.value === '') {
                     errors[elementName] = messages[elementName].required;
                     continue;
@@ -107,18 +108,11 @@
                 }
               }
 
+              // Если текстовый элемент, у которого есть щаблон для заполнения
               if (elementType !== 'cehckbox' && elementType !== 'radio' && pattern) {
-                if (pattern.test(elementValue) === false) {
-                  if (or) {
-                    if ($orFormElement.value === '') {
-                      errors[elementName] = messages[elementName].pattern;
-                      continue;
-                    }
-                  } else {
-                    errors[elementName] = messages[elementName].pattern;
-                    continue;
-                  }
-
+                if (elementValue !== '' && pattern.test(elementValue) === false) {
+                  errors[elementName] = messages[elementName].pattern;
+                  continue;
                 }
               }
 
@@ -188,6 +182,9 @@
           //   id('quiz').resetQuiz();
           // }
           console.log('отправлено');
+          setTimeout(function() {
+            $form.classList.remove('sent');
+          }, 5000);
         }
         /* else if (eventType === 'wpcf7mailfailed') {
                 console.log('отправка не удалась');
@@ -195,10 +192,10 @@
 
         $form.classList.remove('loading');
 
-        thanksPopup.openPopup();
-        thanksPopupTimer = setTimeout(function() {
-          thanksPopup.closePopup();
-        }, 3000);
+        // thanksPopup.openPopup();
+        // thanksPopupTimer = setTimeout(function() {
+        //   thanksPopup.closePopup();
+        // }, 3000);
 
 
       },
@@ -245,16 +242,14 @@
   };
 
 
-  if ($contactsForm) {
-    let $contactsFormBtn = q('button', $contactsForm);
+  if ($callbackForm) {
+    // let $contactsFormBtn = q('button', $contactsForm);
       // $uploadFilesBlock = id('uploadedfiles'),
       // $filesInput = id('files-input');
 
     formValidator({
-      form: $contactsForm,
-      formBtn: $contactsFormBtn,
-      uploadFilesBlock: $uploadFilesBlock,
-      filesInput: $filesInput
+      form: $callbackForm,
+      formBtn: q('button', $callbackForm)
     });
   }
 

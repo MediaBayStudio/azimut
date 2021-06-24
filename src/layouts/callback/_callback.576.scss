@@ -2,3 +2,46 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.callback-sect {
+  &__title {
+  }
+}
+
+.callback-form-wrap {
+}
+
+.callback-form {
+  display: flex;
+  flex-wrap: wrap;
+  &__inputs {
+    margin: 0 auto 0 0;
+    width: 45%;
+  }
+  &__field_name,
+  &__field_tel {
+  }
+  &__field_name {
+  }
+  &__field_tel {
+  }
+  &__field_email {
+  }
+  &__field_msg {
+    width: calc(55% - 20px);
+    > .field__textarea {
+      height: 200px;
+    }
+  }
+  &__bottom {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    max-width: none;
+  }
+  &__check {
+  }
+  &__btn {
+    margin: 0 0 0 auto;
+  }
+}

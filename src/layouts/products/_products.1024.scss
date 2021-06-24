@@ -2,3 +2,36 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.production {
+  &:first-child {
+    padding-top: 70px;
+  }
+  &__title {
+    font-size: 24px;
+  }
+  &__link {
+  }
+  &__descr {
+    font-size: 18px;
+    line-height: 150%;
+  }
+  &__products {
+    margin-top: 40px;
+  }
+}
+.product {
+  height: 310px;
+  &__img {
+  }
+  &__title {
+  }
+  &__list-wrap {
+  }
+  &__list-title {
+  }
+  &__ul {
+  }
+  &__li {
+  }
+}

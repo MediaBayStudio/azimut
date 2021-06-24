@@ -2,3 +2,23 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.text-sect {
+  padding: 75px 0;
+  font-size: 18px;
+  &__title {
+    font-size: 28px;
+  }
+  &__link {
+    font-size: 18px;
+  }
+  &__text {
+    margin-left: 80px;
+    width: 620px;
+  }
+  &__p {
+    &:nth-last-child(n+2) {
+      
+    }
+  }
+}

@@ -4,16 +4,57 @@
 @import '../../scss/assets/variables';
 
 .hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  padding: 55px responsive('1024->1439', '20->200') 0 responsive('1024->1439', '275->380');
+  // padding: 55px responsive('1024->1439', '20->410') 0 responsive('1024->1439', '275->300');
+  color: $darkblue;
+  font: 14px/100% NotoSans;
+  &.fixed {
+    display: none;
+  }
+
   &__logo {
+    display: none;
   }
-  &__logo-img {
-  }
+
+  &__logo-img {}
+
   &__burger {
+    display: none;
   }
-  &__burger-box {
+
+  &__burger-box {}
+
+  &__burger-inner {}
+
+  &__nav {}
+
+  &__address,
+  &__tel {}
+}
+
+#glavnaya {
+
+  .hdr__tel,
+  .hdr__address {
+    display: block;
+    transition: color .5s;
+    &::before {
+      margin: 0 10px 0 0;
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: url('../img/icon-geo.svg') center/contain no-repeat;
+    }
   }
-  &__burger-inner {
-  }
-  &__nav {
+
+  .hdr__tel {
+    &::before {
+      background-image: url('../img/icon-tel.svg');
+    }
   }
 }

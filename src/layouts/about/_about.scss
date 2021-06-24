@@ -2,3 +2,119 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.about {
+  padding: 40px 0 60px;
+  display: flex;
+  flex-flow: column;
+  font: 16px/150% NotoSans;
+  color: $black;
+  &__gallery {
+    max-width: 400px;
+    order: 10;
+    overflow: hidden;
+    position: relative;
+  }
+  &__title {
+    margin: 0 0 20px;
+    font: bold 22px/100% Rubik;
+    color: $orange;
+  }
+  &__descr {
+  }
+  &__feats {
+    margin: 45px 0;
+    width: 275px;
+  }
+  &__partners {
+    margin-top: 75px;
+    order: 11;
+  }
+}
+
+.feats {
+  font: 16px/140% Rubik;
+  color: $darkblue;
+}
+
+.feat {
+  &:nth-last-child(n+2) {
+    margin: 0 0 30px;
+  }
+  &__top {
+    // margin: 0 0 5px;
+    display: block;
+    font: 14px/140% Rubik;
+    color: $greyblue;
+  }
+  &__bottom {
+
+  }
+}
+
+.about-gallery {
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 35px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: $white;
+    z-index: 1;
+  }
+  &__next,
+  &__prev {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    transition: background .5s;
+  }
+  &__next {
+    // margin-left: 50px;
+  }
+  &__img {
+    object-fit: cover;
+  }
+}
+
+.partners {
+  &__title {
+    margin: 0 0 20px;
+    display: block;
+    font: bold 20px/100% Rubik;
+    color: $greyblue;
+  }
+}
+
+.partners-slider {
+  display: flex;
+  flex-flow: column;
+  > .slick-list {
+    overflow: hidden;
+  }
+  &.slick-slider {
+    > .partners-slider__nav {
+      order: 10;
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &__nav {
+    display: none;
+  }
+  &__slide {
+    width: 120px;
+    height: 58px;
+    object-fit: contain;
+    &:nth-last-child(n+2) {
+      margin: 0 40px 0 0;
+    }
+  }
+}

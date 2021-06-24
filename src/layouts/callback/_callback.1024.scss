@@ -2,3 +2,32 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.callback-sect {
+  &__title {
+  }
+}
+
+.callback-form-wrap {
+}
+
+.callback-form {
+  &__inputs {
+  }
+  &__field_name {
+  }
+  &__field_tel {
+  }
+  &__field_email {
+  }
+  &__field_msg {
+  }
+  &__bottom {
+    margin-top: 45px;
+  }
+  &__check {
+  }
+  &__btn {
+    width: 205px;
+  }
+}

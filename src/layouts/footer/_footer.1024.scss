@@ -2,3 +2,64 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.ftr {
+  margin: 0;
+  padding: 30px 0;
+  width: auto;
+  align-items: flex-start;
+  background: $blue;
+  color: $white;
+  &__logo {
+    display: none;
+  }
+
+  &__logo-img {}
+
+  &__copy {
+    margin: 0;
+    line-height: 180%;
+  }
+
+  &__copy-top {}
+
+  &__copy-bottom {}
+
+  &__nav {
+    display: none;
+  }
+
+  &__nav-list {}
+
+  &__nav-li {
+    &:nth-last-child(n+2) {}
+  }
+
+  &__contacts-list {
+    display: none;
+  }
+
+  &__contacts-li {
+    &:nth-last-child(n+2) {}
+  }
+
+  &__contacts-tel {}
+
+  &__bottom {
+    margin: 0 0 0 auto;
+    width: auto;
+    flex-flow: column;
+    align-items: flex-end;
+  }
+
+  &__policy {
+    margin: 0 0 14px;
+  }
+
+  &__dev {}
+
+  &__dev-link {
+    margin: 0;
+    color: $white;
+  }
+}

@@ -2,3 +2,93 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+@supports (offset-path: path("M1 0C1 164 196 279 448 279")) {
+  .index-hero {
+    &__airplane-route {
+      transform: scale(1.25);
+      &:nth-child(1) {
+        > .index-hero__route {
+        }
+        > .index-hero__airplane {
+        }
+      }
+      &:nth-child(2) {
+        // right: -90px;
+        right: responsive('1440->1920', '-90->50');
+        > .index-hero__route {
+        }
+        > .index-hero__airplane {
+        }
+      }
+      &:nth-child(3) {
+        left: auto;
+        // right: -120px;
+        right: responsive('1440->1919', '-135->85');
+        bottom: 15px;
+        > .index-hero__route {
+          // background-image: url('../img/index-hero-route-3.1440.svg');
+        }
+        > .index-hero__airplane {
+          // offset-path: path("M1 328C1 146 792 13 1465 1");
+        }
+      }
+    }
+    &__route {
+    }
+    &__airplane {
+      transform: scale(0.75);
+    }
+  }
+}
+
+@supports not (offset-path: path("M1 0C1 164 196 279 448 279")) {
+   .index-hero {
+    &__airplane-route {
+      // transform: scale(1.25);
+      &:nth-child(1) {
+        right: -75px;
+        &::before {
+        }
+      }
+      &:nth-child(2) {
+        right: -45px;
+        &::before {
+        }
+      }
+      &:nth-child(3) {
+        right: 0;
+        &::before {
+        }
+      }
+    }
+  }
+}
+
+
+.index-hero {
+  &__img {
+    max-width: 530px;
+    width: 42%;
+    bottom: 0;
+  }
+  &__title {
+    max-width: 680px;
+    font-size: 48px;
+  }
+
+  &__airplane-route-1 {
+  }
+
+  &__airplane-route-2 {
+  }
+
+  &__airplane-route-3 {
+  }
+
+  &__airplane-route-3 {}
+
+  &__btn {
+    // margin-top: 90px;
+  }
+}

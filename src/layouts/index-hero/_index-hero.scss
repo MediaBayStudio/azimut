@@ -3,21 +3,37 @@
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
 
+// .airplane-route {
+//   display: none;
+//   pointer-events: none;
+// }
+
 .index-hero {
-  padding-top: 80px + 75px;
-  padding-bottom: 100px;
-  background: lightgrey;
+  margin-left: -20px;
+  padding: 25vh 20px;
+  width: 100vw;
+  height: 100vh;
+  background: center/cover no-repeat, $lightblue;
   &__title {
-    font: bold 32px/150% Rubik;
-    text-align: center;
+    max-width: 280px;
+    font: bold 28px/150% Rubik;
     letter-spacing: 0.02em;
+    color: $darkblue;
   }
   &__btn {
-    margin: 70px auto 0;
-    display: block;
-    width: 205px;
-    height: 50px;
-    font: bold 18px/100% NotoSans;
-    border: 1px solid #000;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 170px;
+    height: 45px;
+    position: relative;
+    z-index: 1;
+  }
+  &__img {
+    display: none;
+  }
+  &__airplane-route {
+    display: none;
   }
 }

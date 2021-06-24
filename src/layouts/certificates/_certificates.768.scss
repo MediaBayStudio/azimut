@@ -2,3 +2,58 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.docs-sect {
+  padding: 50px 0;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  &__title {
+    max-width: 165px;
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  &__docs {
+    justify-self: end;
+    grid-row: 1/span 2;
+    grid-column: 2;
+    width: 470px;
+    &.slick-slider {
+      +.docs-sect__nav {}
+
+      .doc {
+        &:nth-last-child(n+2) {}
+      }
+    }
+  }
+
+  &__doc {
+    width: 225px;
+    &:nth-last-child(n+2) {}
+  }
+
+  &__nav {
+    margin: 70px 0 0;
+    align-self: end;
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  &__prev {}
+
+  &__next {}
+
+  &__prev,
+  &__next {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.doc {
+
+  &__img {}
+
+  &__title {}
+}

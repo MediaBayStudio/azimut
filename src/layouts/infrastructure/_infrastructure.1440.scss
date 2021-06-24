@@ -2,3 +2,53 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.infrastructure {
+  padding: 75px 0;
+  font-size: 18px;
+  &__title {
+    font-size: 28px;
+  }
+
+  &__p {
+    width: 495px;
+    &:nth-last-of-type(n+2) {}
+
+    &:last-of-type {
+      margin: 0 0 90px;
+    }
+  }
+
+  &__images {
+    // width: 495px;
+    width: 730px;
+  }
+
+  &__img-wrap {
+    width: calc((100% - 30px) / 3);
+    &:nth-last-child(n+2) {
+      margin: 0 15px 0 0;
+    }
+  }
+
+  &__img {
+    
+  }
+
+  &__map {
+    width: responsive('1440->1919', '1000->1675');
+    right: responsive('1440->1919', '-605->-1000');
+    // right: responsive('1440->1919', '-600->-275');
+  }
+}
+
+.infrastructure-slider {
+  &__nav {}
+
+  &__prev,
+  &__next {}
+
+  &__prev {}
+
+  &__next {}
+}

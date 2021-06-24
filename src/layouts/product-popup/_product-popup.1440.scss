@@ -2,3 +2,36 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.product-popup {
+
+  &.active {}
+
+  &.loading {
+    .loader {}
+  }
+
+  &__cnt {
+    width: 1045px;
+  }
+
+  &__close {
+    margin-bottom: 45px;
+    &:active {}
+
+    &-svg {}
+
+    &-path {}
+  }
+
+  &__title {
+    margin: 0 0 35px;
+  }
+
+  &__descr {}
+
+  &__nav {}
+
+  &__prev,
+  &__next {}
+}

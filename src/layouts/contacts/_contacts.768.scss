@@ -2,3 +2,39 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.contacts {
+  padding: 60px 0 100px;
+
+  &__title {
+  }
+
+  &__wrap {
+    position: relative;
+    height: 100%;
+
+  }
+
+  &__list {
+    padding-left: 35px;
+  }
+
+  &__li {
+    &::before {
+      left: -35px;
+      width: 20px;
+    }
+  }
+
+  &__tel {}
+
+  &__map {
+    // Самый нормальный вариант с pos:a
+    margin: 0;
+    width: 280px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

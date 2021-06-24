@@ -4,6 +4,8 @@
 @import '../../scss/assets/variables';
 
 .hdr {
+  padding: 35px calc(50% - 344px);
+  height: 105px;
   &__logo {
   }
   &__logo-img {

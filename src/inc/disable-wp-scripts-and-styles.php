@@ -39,5 +39,5 @@ add_action( 'init', function() {
 
   // Удаление неправильного атрибута у html тегов honeypot
 add_filter('wpcf7_honeypot_html_output', function( $html, $args ) {
-    return str_replace( ' autocomplete="nope"', '', $html );
+    return str_replace( ' autocomplete="nope"', ' autocomplete="off"', $html );
 }, 10, 2 );

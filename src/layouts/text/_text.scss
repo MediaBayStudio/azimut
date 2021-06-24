@@ -1,0 +1,61 @@
+// assets import
+@import '../../scss/assets/colors';
+@import '../../scss/assets/mixins';
+@import '../../scss/assets/variables';
+
+.text {
+  padding-bottom: 80px;
+  font: 17px/27px NotoSans;
+  color: $black;
+  &__title {
+    margin: 0 0 30px;
+    font: bold 18px/100% Rubik;
+    color: $darkblue;
+  }
+  &__cnt {
+    a {
+      color: $blue;
+      text-decoration: underline;
+      transition: text-decoration-color .5s;
+      &:hover {
+        text-decoration-color: transparent;
+      }
+    }
+    ul {
+      >li {
+        &::before {
+          content: '';
+          margin: 0 8px 0 0;
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          vertical-align: middle;
+          background: $orange;
+        }
+        >ul {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    ol {
+      counter-reset: list 0;
+      >li {
+        &::before {
+          counter-increment: list;
+          content: counter(list) ". ";
+          margin: 0 8px 0 0;
+          display: inline-block;
+          color: $orange;
+          font-weight: bold;
+        }
+      }
+    }
+
+    sup {
+      display: inline-block;
+      margin-top: -5px;
+    }
+  }
+}

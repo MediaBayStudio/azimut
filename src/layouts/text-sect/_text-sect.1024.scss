@@ -2,3 +2,20 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.text-sect {
+  &__title {
+    font-size: 24px;
+  }
+  &__link {
+  }
+  &__text {
+    margin-left: 15px;
+    width: 480px;
+  }
+  &__p {
+    &:nth-last-child(n+2) {
+      
+    }
+  }
+}

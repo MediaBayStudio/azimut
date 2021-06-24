@@ -1,0 +1,63 @@
+// assets import
+@import '../../assets/colors';
+@import '../../assets/mixins';
+@import '../../assets/variables';
+
+.sections-wrapper {}
+
+@supports (offset-path: path("M1 0C1 164 196 279 448 279")) {
+  .index-airplane-route {
+    left: responsive('1920->2560', '125->765');
+    bottom: -140px;
+    // bottom: -150px;
+    // left: 125px;
+    // bottom: -310px;
+  }
+
+  .about-airplane-route {
+    // right: 100px;
+  }
+
+  .index-airplane-route__route {}
+
+  .index-airplane-route__airplane {}
+
+  .about-airplane-route__route {}
+
+
+  .about-airplane-route__airplane {}
+}
+
+
+@supports not (offset-path: path("M1 0C1 164 196 279 448 279")) {
+  .index-airplane-route {
+    // right: 415px;
+    // bottom: -510px;
+    // right: 405px;
+    right: 276px;
+  }
+
+  .index-airplane-route__route,
+  .about-airplane-route__route {
+  }
+
+  .index-airplane-route__airplane,
+  .about-airplane-route__airplane {
+  }
+
+  .about-airplane-route {
+    // transform: scale(1.25);
+    top: -9%;
+    left: -18%;
+    width: 2000px;
+    height: 4750px;
+  }
+
+  // .about-airplane-route__route {
+  //   display: none;
+  // }
+
+
+  .about-airplane-route__airplane {
+  }
+}

@@ -3,8 +3,22 @@
 @import '../../assets/mixins';
 @import '../../assets/variables';
 
-#wpadminbar {
+.index-airplane-route,
+.about-airplane-route {
   display: none;
+}
+
+.index-airplane-route__route {
+
+}
+
+.check:focus-within,
+.btn:focus {
+  outline: 1px dotted;
+}
+
+#wpadminbar {
+  // display: none;
 }
 
 html[lang] {
@@ -16,6 +30,10 @@ a[href="#"] {
   pointer-events: none;
 }
 
+body.loading {
+  cursor: wait;
+}
+
 body.no-scroll {
   overflow: hidden;
 }
@@ -25,11 +43,94 @@ body.no-scroll {
 // }
 
 .page-wrapper {
-
+  overflow: hidden;
 }
 
-.sections-wrapper {
+.menu__nav-li.current {
+  pointer-events: none;
+  color: $orange;
+  font-weight: bold;
+}
 
+.sections-wrapper {}
+
+/* Видимость элементов */
+  /* Видимость регулируется добавлением/удалением классов
+    или по css селекторам */
+  .hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s;
+  }
+
+  .visible {
+    opacity: 1;
+    visibility: visible;
+  }
+/* Видимость элементов */
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.9);
+  transition: opacity .5s .25s, visibility .5s .25s;
+  // Видимость регулируется классами .hidden и .visible
+  &__circle {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    animation: spin .5s linear infinite;
+    border-top-color: $orange;
+    border-left-color: $orange;
+  }
+}
+
+.sent {
+  > .msg {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.msg {
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  position: absolute;
+  padding: 25px;
+  top: -1px;
+  left: -1px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s, visibility .5s;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0 0 5px 5px;
+  &__title {
+    margin: 0 0 15px;
+    display: block;
+    color: $darkblue;
+    font: bold 18px/100% Rubik;
+  }
+  &__text {
+    max-width: 240px;
+  }
+}
+
+.loading > .loader {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .5s, visibility .5s;
 }
 
 .sect {
@@ -57,6 +158,7 @@ body.no-scroll {
   height: 100%;
   overflow-y: scroll;
   z-index: 9999;
+
   &.active {
     display: block;
   }
@@ -65,26 +167,42 @@ body.no-scroll {
 .nav__list-item {
   &.current {
     cursor: not-allowed;
-    > .nav__link {
+
+    >.nav__link {
       pointer-events: none;
-      > .nav__link-text {
+
+      >.nav__link-text {
         border-bottom: 1px solid;
       }
     }
   }
 }
 
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: bold 16px/100% NotoSans;
+  transition: background .5s, border-color .5s, color .5s;
+}
+
+.btn_orange {
+  background: $orange;
+  border: 1px solid $orange;
+  color: $white;
+}
+
 .sect {
 
-  &_bg {
+  &_bg {}
 
-  }
   &-title {
-
+    margin: 0 0 20px;
+    font: bold 22px/160% Rubik;
+    color: $orange;
   }
-  &-descr {
 
-  }
+  &-descr {}
 }
 
 div.wpcf7-response-output,

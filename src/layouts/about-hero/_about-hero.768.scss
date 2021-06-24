@@ -2,3 +2,26 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.about-hero {
+  padding: 130px 0 50px;
+  &__title {
+    margin: 0 0 25px;
+  }
+  &__descr {
+  }
+  &__feats {
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    > .feat {
+      &:nth-last-child(n+2) {
+        margin: 0 45px 0 0;
+      }
+      > .feat__top {
+        margin: 0 0 10px;
+      }
+    }
+  }
+}

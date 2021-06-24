@@ -2,3 +2,129 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.production {
+  display: flex;
+  flex-wrap: wrap;
+  &__title {
+    margin: 0;
+  }
+  &__link {
+    margin: auto 0 0 auto;
+  }
+
+  &__descr {
+    margin: 20px 0 0;
+  }
+
+  &__products {
+    margin-top: 35px;
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    // border-top: 1px solid #E0E0E0;
+    border-left: 1px solid #E0E0E0;
+  }
+}
+
+
+.product {
+  padding: 50px 22px 0;
+  width: 50%;
+  height: 350px;
+  align-items: center;
+  // justify-content: center;
+  text-align: center;
+  position: relative;
+  background: $white;
+  // border-top-color: transparent;
+  border-left-color: transparent;
+  transition: box-shadow .5s, z-index .5s, transform .5s, border-color .5s;
+  z-index: 1;
+  &:hover {
+    border-top-color: #E0E0E0;
+    border-left-color: #E0E0E0;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(6, 34, 47, 0.05);
+    z-index: 100;
+    &#cat-14 {
+      .product__list-title {
+        max-width: none;
+      }
+    }
+    >.product__img {
+      // transform: translateX(100px);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    >.product__title {
+      // transform: translateX(100px);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    >.product__list-wrap {
+      opacity: 1;
+      visibility: visible;
+
+      >.product__list-title {
+        // transform: translateX(0);
+        // opacity: 1;
+      }
+    }
+
+    .product__li {
+      // transform: translateX(0);
+      // opacity: 1;
+    }
+  }
+
+  &__img {
+    margin: 0 0 30px;
+    width: 60px;
+    height: 60px;
+    // opacity: 1;
+    // visibility: visible;
+    // transition: transform .5s, opacity .5s, visibility .5s;
+  }
+
+  &__title {
+    display: block;
+    font: bold 18px/150% Rubik;
+    color: $darkblue;
+    // opacity: 1;
+    // visibility: visible;
+    // transition: transform .5s, opacity .5s, visibility .5s;
+  }
+
+  &__list-wrap {
+    padding: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $white;
+    opacity: 0;
+    visibility: hidden;
+    text-align: left;
+    transition: opacity .5s, visibility .5s;
+  }
+
+  &__list-title {
+    display: block;
+    // transform: translateX(-100%);
+    // opacity: 0;
+    // transition: transform .5s, opacity .5s;
+  }
+
+  &__ul {}
+
+  &__li {
+    // transform: translateX(-100%);
+    // opacity: 0;
+    // transition: transform .5s, opacity .5s;
+  }
+}

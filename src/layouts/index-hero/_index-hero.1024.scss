@@ -2,3 +2,90 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+@supports (offset-path: path("M1 0C1 164 196 279 448 279")) {
+  .index-hero {
+    &__airplane-route {
+      &:nth-child(1) {
+        > .index-hero__route {
+        }
+        > .index-hero__airplane {
+        }
+      }
+      &:nth-child(2) {
+        right: responsive('1024->1440', '-195->0');
+        > .index-hero__route {
+        }
+        > .index-hero__airplane {
+        }
+      }
+      &:nth-child(3) {
+        left: 150px;
+        > .index-hero__route {
+        }
+        > .index-hero__airplane {
+        }
+      }
+    }
+    &__route {
+    }
+    &__airplane {
+    }
+  }
+}
+
+@supports not (offset-path: path("M1 0C1 164 196 279 448 279")) {
+   .index-hero {
+    &__airplane-route {
+      > .index-hero__route,
+      .index-hero__airplane {
+      }
+      &:nth-child(1) {
+        top: 0;
+        right: 0;
+        &::before {
+          content: url('../img/index-hero-air-1.1024.svg');
+        }
+      }
+      &:nth-child(2) {
+        top: -65px;
+        right: -115px;
+        &::before {
+          content: url('../img/index-hero-air-2.1024.svg');
+        }
+      }
+      &:nth-child(3) {
+        bottom: 0;
+        // right: 0;
+        right: -280px;
+        &::before {
+          content: url('../img/index-hero-air-3.1024.svg');
+        }
+      }
+    }
+  }
+}
+
+.index-hero {
+  // padding-top: 225px;
+  // padding-bottom: 345px;
+  width: auto;
+  margin-left: 0;
+  // padding: 25vh 0;
+  padding: 200px 0 300px;
+
+  &__img {
+    width: 400px;
+    right: 0;
+  }
+
+  &__title {
+    max-width: 500px;
+  }
+
+  &__btn {
+    margin-top: 80px;
+    z-index: 1;
+    position: relative;
+  }
+}

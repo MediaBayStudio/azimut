@@ -2,3 +2,35 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.infrastructure {
+  &__title {}
+
+  &__p {
+    &:nth-last-of-type(n+2) {}
+
+    &:last-of-type {}
+  }
+
+  &__images {
+    &:nth-last-child(n+2) {}
+  }
+
+  &__img {}
+
+  &__map {
+    width: responsive('1024->1439', '800->1160');
+    right: responsive('1024->1439', '-465->-705');
+  }
+}
+
+.infrastructure-slider {
+  &__nav {}
+
+  &__prev,
+  &__next {}
+
+  &__prev {}
+
+  &__next {}
+}

@@ -2,3 +2,150 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+@keyframes move-along {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@supports (offset-path: path("M1 0C1 164 196 279 448 279")) {
+  .index-hero {
+    &__airplane-route {
+      position: absolute;
+      display: block;
+      &:nth-child(1) {
+        width: 447px;
+        height: 279px;
+        top: 0;
+        right: 0;
+        > .index-hero__route {
+          background: url('../img/index-hero-route-1.svg') center/contain no-repeat;
+        }
+        > .index-hero__airplane {
+          offset-path: path("M1 0C1 164 196 279 448 279");
+          &:nth-child(2) {
+            animation-delay: 15s;
+          }
+        }
+      }
+      &:nth-child(2) {
+        width: 456px;
+        height: 701px;
+        top: 0;
+        // right: 0;
+        right: responsive('768->1023', '-240->-125');
+        > .index-hero__route {
+          background: url('../img/index-hero-route-2.svg') center/contain no-repeat;
+        }
+        > .index-hero__airplane {
+          offset-path: path("M457 702.15C285 694.15 1 564.15 1 340.15C1 116.15 292 -3.84985 451 1.15017");
+          &:nth-child(2) {
+            animation-delay: 7.5s;
+            // animation-duration: 60s;
+          }
+        }
+      }
+      &:nth-child(3) {
+        width: 1027px;
+        height: 327px;
+        bottom: -10px;
+        left: 0;
+        > .index-hero__route {
+          background: url('../img/index-hero-route-3.768.svg') center/contain no-repeat;
+        }
+        > .index-hero__airplane {
+          offset-path: path("M1 328C1 146 355 13 1028 1");
+          &:nth-child(2) {
+            animation-delay: 20s;
+          }
+        }
+      }
+    }
+    &__route {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    &__airplane {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      offset-anchor: 50% 50%;
+      offset-path: path("M1 328C1 146 355 13 1028 1");
+      offset-rotate: auto 96deg;
+      animation: move-along 40s infinite linear;
+    }
+  }
+}
+
+@supports not (offset-path: path("M1 0C1 164 196 279 448 279")) {
+   .index-hero {
+    &__airplane-route {
+      position: absolute;
+      display: block;
+      > .index-hero__route,
+      .index-hero__airplane {
+        display: none;
+      }
+      &:nth-child(1) {
+        top: 0;
+        right: 0;
+        &::before {
+          display: block;
+          content: url('../img/index-hero-air-1.768.svg');
+          pointer-events: none;
+        }
+      }
+      &:nth-child(2) {
+        top: 0;
+        right: -65px;
+        &::before {
+          display: block;
+          content: url('../img/index-hero-air-2.768.svg');
+          pointer-events: none;
+        }
+      }
+      &:nth-child(3) {
+        bottom: 0;
+        right: 0;
+        &::before {
+          display: block;
+          content: url('../img/index-hero-air-3.768.svg');
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
+
+.index-hero {
+  padding: 25vh calc(50vw - 344px);
+  margin-left: calc((50vw - 344px) * -1);
+  overflow: hidden;
+  position: relative;
+  height: auto;
+  &__img {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+    width: 350px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &__title {
+    max-width: none;
+    font-size: 36px;
+  }
+
+  &__btn {}
+}

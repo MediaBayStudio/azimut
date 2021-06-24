@@ -1,0 +1,20 @@
+// assets import
+@import '../../scss/assets/colors';
+@import '../../scss/assets/mixins';
+@import '../../scss/assets/variables';
+
+.hdr {
+  padding: 50px responsive('1920->2560', '115->550') 0 550px;
+  &__logo {
+  }
+  &__logo-img {
+  }
+  &__burger {
+  }
+  &__burger-box {
+  }
+  &__burger-inner {
+  }
+  &__nav {
+  }
+}

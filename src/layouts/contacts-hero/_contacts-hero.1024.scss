@@ -2,3 +2,26 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.contacts-hero {
+  padding: 70px 0 50px;
+  font-size: 18px;
+  &__img {
+    width: 315px;
+    // height: 315px;
+  }
+
+  &__title {
+    font-size: 24px;
+  }
+
+  &__list {
+    max-width: 375px;
+  }
+
+  &__li {
+    &:nth-last-child(n+2) {}
+  }
+
+  &__map {}
+}

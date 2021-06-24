@@ -1,0 +1,50 @@
+// assets import
+@import '../../scss/assets/colors';
+@import '../../scss/assets/mixins';
+@import '../../scss/assets/variables';
+
+.hdr__burger {
+  &-box {}
+
+  &-inner {
+
+    &::after,
+    &::before {}
+
+    &::after {}
+
+    &::before {}
+  }
+
+  &.active {
+    .hdr__burger-inner {
+
+      &::before {}
+
+      &::after {}
+    }
+  }
+}
+
+.menu {
+  width: 350px;
+  &.active {}
+
+  &__cnt {
+    padding: 30px 50px 0;
+  }
+
+  &__logo {}
+
+  &__logo-img {}
+
+  &__tel {}
+
+  &__nav {}
+
+  &__nav-list {}
+
+  &__nav-li {
+    &:nth-last-child(n+2) {}
+  }
+}

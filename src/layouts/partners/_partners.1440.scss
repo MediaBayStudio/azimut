@@ -2,3 +2,33 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.partners-sect {
+  padding: 60px 0;  
+  display: flex;
+  flex-wrap: wrap;
+  &__title {
+    // margin: 0 0 80px;
+    font-size: 28px;
+  }
+  &__text-cnt {
+    margin: 0 0 0 auto;
+    width: 620px;
+    font-size: 18px;
+  }
+  &__partners {
+    margin-top: 60px;
+    max-width: 1000px;
+  }
+  &__partner {
+    width: 150px;
+    height: 75px;
+    &:nth-child(n) {
+      margin: 0 45px 75px 0;
+    }
+    &:nth-child(5),
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

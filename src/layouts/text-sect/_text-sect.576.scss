@@ -2,3 +2,17 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.text-sect {
+  &__title {
+  }
+  &__link {
+  }
+  &__text {
+  }
+  &__p {
+    &:nth-last-child(n+2) {
+      
+    }
+  }
+}

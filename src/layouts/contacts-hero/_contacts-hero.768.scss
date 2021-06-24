@@ -2,3 +2,52 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.contacts-hero {
+  padding: 130px 0 50px;
+  // display: block;
+  &__wrap {
+    position: relative;
+  }
+  &__img {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 335px;
+    height: 100%;
+    object-position: bottom;
+  }
+
+  &__title {
+    margin: 0 0 35px;
+    font-size: 28px;
+  }
+
+  &__list {
+    padding-left: 30px;
+  }
+
+  &__li {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 11px;
+      left: -30px;
+      width: 20px;
+      height: 1px;
+      background: $orange;
+    }
+    > .br3 {
+      display: none;
+    }
+    &:nth-last-child(n+2) {
+      margin: 0 0 25px;
+    }
+  }
+
+  &__map {
+  
+  }
+}

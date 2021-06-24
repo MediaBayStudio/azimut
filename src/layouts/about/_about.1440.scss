@@ -2,3 +2,60 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.about {
+  padding: 0 0 75px;
+  &__gallery {
+    margin: 0 0 0 65px;
+    width: 45%;
+    max-width: 500px;
+    // width: 430px;
+    height: 565px;
+  }
+
+  &__title {
+    font-size: 28px;
+  }
+
+  &__descr {
+    max-width: none;
+  }
+
+  &__feats {
+    width: 330px;
+    margin: 115px 0;
+  }
+
+  &__partners {}
+}
+
+.feats {
+  font-size: 20px;
+}
+
+.feat {
+  &__top {}
+
+  &__bottom {}
+}
+
+.about-gallery {
+  &__nav {
+    width: 140px;
+    height: 40px;
+  }
+
+  &__next {}
+}
+
+.partners {
+  &__title {}
+}
+
+.partners-slider {
+  &__slide {
+    &:nth-last-child(n+2) {
+      margin-right: 75px;
+    }
+  }
+}

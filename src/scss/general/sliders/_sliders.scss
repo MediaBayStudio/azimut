@@ -13,17 +13,15 @@
 }
 
 li.slick-active > .dot {
-  cursor: default;
-  transform: scale(2);
-  // background: $red;
+  pointer-events: none;
+  background: $orange;
 }
 
 .dots .dot {
-  width: 6px;
-  height: 6px;
-  // background: $light;
-  border-radius: 50%;
-  transition: transform .35s, color .35s
+  width: 10px;
+  height: 10px;
+  background: $lightblue;
+  transition: background .35s
 }
 
 .slick {
@@ -78,16 +76,22 @@ li.slick-active > .dot {
 
 .arrow {
   display: flex;
+  align-items: center;
+  justify-content: center;
   transition: opacity .35s, fill .35s;
-  &.slick-disabled {
+  &.slick-disabled,
+  &.disabled {
     opacity: 0.5;
+    pointer-events: none;
   }
   &__prev {
-    > .arrow__svg {
+    > .arrow__svg,
+    > .arrow__img {
       transform: rotate(180deg);
     }
   }
-  &__svg {
+  &__svg,
+  &__img {
     pointer-events: none;
   }
 }

@@ -4,6 +4,13 @@
 @import '../../scss/assets/variables';
 
 .hdr {
+  padding: 20px calc(50% - 268px);
+  &.fixed {
+    height: 45px;
+    > .hdr__burger {
+      transform: none;
+    }
+  }
   &__logo {
     
   }

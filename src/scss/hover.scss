@@ -2,3 +2,63 @@
 @import 'assets/colors';
 @import 'assets/mixins';
 @import 'assets/variables';
+
+.btn_orange:hover {
+  background: $blue;
+  border-color: $blue;
+}
+
+.about-gallery__prev:hover,
+.about-gallery__next:hover {
+  background: $blue;
+}
+
+.product-popup__prev:hover,
+.product-popup__next:hover {
+  background: $orange;
+}
+
+.partners-sect__partner:hover {
+  filter: grayscale(0);
+}
+
+.docs-sect__next:hover,
+.docs-sect__prev:hover {
+  background: $orange;
+}
+
+.doc:hover > .doc__title {
+  text-decoration-color: transparent;
+}
+
+.product-popup__close:hover,
+.contacts-hero__tel:hover,
+.contacts-hero__email:hover,
+.product__link:hover,
+.check__link:hover,
+.contacts__tel:hover,
+.contacts__email:hover {
+  color: $orange;
+}
+
+.production__link:hover {
+  color: $orange;
+  border-bottom-color: transparent;
+}
+
+.text-sect__link:hover {
+  color: $darkblue;
+}
+
+.ftr__policy:hover {
+  border-bottom-color: transparent;
+}
+
+.ftr__dev-link:hover {
+  color: $darkblue;
+}
+
+
+.hdr__tel:hover {
+  color: $lightblue;
+}

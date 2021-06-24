@@ -1,25 +1,64 @@
+@import 'mixins';
 
-.container {
+.page-wrapper {
   padding: 0 20px;
 }
 
-// @media (min-width: 575.98px) {
-//   .container {
-//     padding: 0 calc(50% - 268px);
-//   }
-// }
-// @media (min-width: 767.98px) {
-//   .container {
-//     padding: 0 calc(50% - 344px);
-//   }
-// }
-// @media (min-width: 1023.98px) {
-//   .container {
-//     padding: 0 calc(50% - 470px);
-//   }
-// }
-// @media (min-width: 1439.98px) {
-//   .container {
-//     padding: 0 calc(50% - 600px);
-//   }
-// }
+@media (min-width: 575.98px) {
+  .page-wrapper {
+    padding: 0 calc(50% - 268px);
+  }
+}
+
+@media (min-width: 767.98px) {
+  .page-wrapper {
+    padding: 0 calc(50% - 344px);
+  }
+}
+
+@media (min-width: 1023.98px) {
+  .page-wrapper {
+    // padding: 0 0 0 225px;
+    padding: 0 0 0 responsive('1024->1439', '225->280');
+  }
+
+  .sections-wrapper {
+    >section,
+    >.ftr {
+      // padding-left: responsive('1024->1439', '50->75');
+      // padding-right: responsive('1024->1439', '20->410');
+
+      padding-left: responsive('1024->1439', '50->100');
+      padding-right: responsive('1024->1439', '20->200');
+    }
+  }
+}
+
+@media (min-width: 1439.98px) {
+  .page-wrapper {
+    padding-left: 260px;
+  }
+  .sections-wrapper {
+    >section,
+    >.ftr {
+      // padding-left: responsive('1440->1919', '100->175');
+      // padding-right: responsive('1440->1919', '115->520');
+      padding-left: responsive('1440->1919', '100->200');
+      padding-right: responsive('1440->1919', '115->200');
+
+    }
+  }
+}
+
+@media (min-width: 1919.98px) {
+  .page-wrapper {
+    padding-left: 350px;
+  }
+  .sections-wrapper {
+    >section,
+    >.ftr {
+      padding-left: 200px;
+      padding-right: responsive('1920->2560', '115->550');
+    }
+  }
+}

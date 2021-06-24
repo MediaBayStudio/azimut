@@ -3,22 +3,6 @@
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
 
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 125%;
-  background: rgba(51, 51, 51, 0.7);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .5s, visibility .5s;
-  &.active {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
 .hdr__burger {
   display: inline-flex;
   transition: opacity .15s linear;
@@ -27,44 +11,44 @@
   overflow: visible;
   transition: transform .5s;
   z-index: 1;
-  font-size: 6px; // Для контроля размеров
+  font-size: 7.5px; // Для контроля размеров
   &-box {
     display: inline-block;
     flex-shrink: 0;
     width: 4.2em;
     height: 2.835em;
     position: relative;
+    pointer-events: none;
   }
 
   &-inner {
     display: block;
-    width: 100%;
-    height: 2px;
+    width: 26px;
+    height: 3px;
     position: absolute;
-    top: 50%;
-    background: #000;
+    top: calc(50% - 1.5px);
+    background: $darkblue;
     transition: transform 0.075s 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19), background-color 0s 0.075s linear;
-    border-radius: 2px;
 
     &::after,
     &::before {
       content: '';
       display: block;
-      width: 100%;
+      width: 33px;
       height: 100%;
       position: absolute;
-      background: #000;
+      background: $darkblue;
       border-radius: inherit;
     }
 
     &::after {
-      bottom: -1em; // 6px
+      bottom: -1.2em; // 6px
       transition: bottom 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
 
     &::before {
-      top: -1em; // 6px
-      background: #000;
+      top: -1.3em; // 6px
+      background: $darkblue;
       transition: top 0.075s 0.075s ease-in, transform 0.075s 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
   }
@@ -86,6 +70,65 @@
         transform: rotate(45deg);
         transition: bottom 0.075s 0.1s ease-out, transform 0.075s 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
+    }
+  }
+}
+
+.menu {
+  width: 100%;
+  height: 105%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s, visibility .5s;
+  background: transparentize($lightblue, .3);
+  z-index: 101;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__cnt {
+    margin-right: auto;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    max-width: 75%;
+    height: calc(var(--vh, 1vh) * 100);
+    max-height: 100vh;
+    max-height: calc(var(--vh, 1vh) * 100);
+    height: 100vh;
+    padding: 20px 30px 7.05vh 20px; // 40px на width: 320px;
+    background: $darkblue;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 100%;
+    font: 16px/100% NotoSans;
+    color: $white;
+  }
+
+  &__logo {
+  }
+
+  &__logo-img {}
+
+  &__tel {
+    // margin: 0 0 30px;
+    // font-size: calc(1em + 2px);
+  }
+
+  &__nav {
+    margin: 115px 0 auto;
+  }
+
+  &__nav-list {}
+
+  &__nav-li {
+    &:nth-last-child(n+2) {
+      margin: 0 0 50px;
     }
   }
 }

@@ -2,3 +2,25 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.partners-sect {
+  &__title {
+    font-size: 24px;
+  }
+  &__partners {
+    
+  }
+  &__partner {
+    // width: 100px;
+    // height: 50px;
+    filter: grayscale(1);
+    transition: filter .5s;
+    &:nth-child(n) {
+      margin: 0 40px 35px 0;
+    }
+    &:nth-child(5),
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

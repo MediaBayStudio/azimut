@@ -2,3 +2,56 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.hdr__burger {
+  &-box {}
+
+  &-inner {
+
+    &::after,
+    &::before {}
+
+    &::after {}
+
+    &::before {}
+  }
+
+  &.active {
+    .hdr__burger-inner {
+
+      &::before {}
+
+      &::after {}
+    }
+  }
+}
+
+.menu {
+  width: 260px;
+  &.active {}
+
+  &__cnt {
+    padding: 30px 35px 0;
+  }
+
+  &__logo {
+    margin-left: -15px;
+  }
+
+  &__logo-img {
+    width: 195px;
+    height: 50px;
+  }
+
+  &__tel {}
+
+  &__nav {
+    margin: 18.5vh 0 auto;
+  }
+
+  &__nav-list {}
+
+  &__nav-li {
+    &:nth-last-child(n+2) {}
+  }
+}

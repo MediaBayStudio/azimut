@@ -2,3 +2,14 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-hero {
+  margin-left: calc((50vw - 268px) * -1);
+  padding: 25vh calc(50vw - 268px);
+  &__title {
+    max-width: 450px;
+    font-size: 32px;
+  }
+
+  &__btn {}
+}

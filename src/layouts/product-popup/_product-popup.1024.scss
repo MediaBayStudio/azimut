@@ -2,3 +2,40 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.product-popup {
+
+  &.active {}
+
+  &.loading {
+    .loader {}
+  }
+
+  &__cnt {
+    padding: 20px 60px 35px;
+    width: 818px;
+  }
+
+  &__close {
+    margin: 0 -35px 20px auto;
+    &:active {}
+
+    &-svg {}
+
+    &-path {}
+  }
+
+  &__title {}
+
+  &__descr {}
+
+  &__nav {}
+
+  &__prev,
+  &__next {}
+
+  &__link {
+    left: 60px;
+    bottom: 42px;
+  }
+}

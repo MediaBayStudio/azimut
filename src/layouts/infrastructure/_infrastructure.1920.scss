@@ -1,0 +1,44 @@
+// assets import
+@import '../../scss/assets/colors';
+@import '../../scss/assets/mixins';
+@import '../../scss/assets/variables';
+
+.infrastructure {
+  &__title {
+  }
+
+  &__p {
+    &:nth-last-of-type(n+2) {}
+
+    &:last-of-type {
+    }
+  }
+
+  &__images {
+  }
+
+  &__img-wrap {
+    &:nth-last-child(n+2) {
+    }
+  }
+
+  &__img {
+    
+  }
+
+  &__map {
+    width: 1675px;
+    right: -1000px;
+  }
+}
+
+.infrastructure-slider {
+  &__nav {}
+
+  &__prev,
+  &__next {}
+
+  &__prev {}
+
+  &__next {}
+}

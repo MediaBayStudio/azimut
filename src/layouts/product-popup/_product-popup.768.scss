@@ -2,3 +2,44 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.product-popup {
+  // align-items: center;
+  &.active {}
+
+  &.loading {
+    .loader {}
+  }
+
+  &__cnt {
+    padding: 20px 35px 25px;
+    width: 568px;
+  }
+
+  &__close {
+    margin: 0 -15px 15px auto;
+    &:active {}
+
+    &-svg {}
+
+    &-path {}
+  }
+
+  &__title {
+    margin: 0 0 15px;
+  }
+
+  &__descr {}
+
+  &__nav {
+    margin: 45px 0 0 auto;
+  }
+
+  &__prev,
+  &__next {}
+
+  &__link {
+    left: 35px;
+    bottom: 34px;
+  }
+}

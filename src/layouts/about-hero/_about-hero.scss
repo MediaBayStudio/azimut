@@ -2,3 +2,24 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.about-hero {
+  padding: 105px 0 60px;
+  font: 16px/150% NotoSans;
+  color: $black;
+  &__title {
+    margin: 0 0 15px;
+    font: bold 22px/100% Rubik;
+    color: $orange;
+  }
+  &__descr {
+  }
+  &__feats {
+    margin-top: 75px;
+    width: 235px;
+    font-size: 20px;
+    > .feat:first-child {
+      width: 220px;
+    }
+  }
+}

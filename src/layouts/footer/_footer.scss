@@ -2,3 +2,76 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.ftr {
+  margin-left: -20px;
+  padding: 30px 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100vw;
+  font: 12px/100% NotoSans;
+  text-align: center;
+  color: $darkblue;
+  background: $lightblue;
+  &__top {
+
+  }
+  &__logo {
+  }
+  &__logo-img {
+    width: 235px;
+    height: 60px;
+  }
+  &__copy {
+    margin-top: 15px;
+    display: flex;
+    flex-flow: column;
+    line-height: 140%;
+  }
+  &__copy-top {
+  }
+  &__copy-bottom {
+  }
+  &__nav {
+    margin: 40px 0;
+    font: bold 16px/100% NotoSans;
+  }
+  &__nav-list {
+
+  }
+  &__nav-li {
+    &:nth-last-child(n+2) {
+      margin: 0 0 40px;
+    }
+  }
+  &__contacts-list {
+    max-width: 300px;
+    font: 14px/150% NotoSans;
+  }
+  &__contacts-li {
+    &:nth-last-child(n+2) {
+      margin: 0 0 20px;
+    }
+  }
+  &__contacts-tel {
+  }
+  &__bottom {
+    margin-top: 40px;
+  }
+  &__policy {
+    margin: 0 0 20px;
+    display: inline-block;
+    border-bottom: 1px solid;
+    transition: border-bottom-color .5s;
+  }
+  &__dev {
+  }
+  &__dev-link {
+    display: inline-flex;
+    font: 500 14px/100% SegoeUI, sans-serif;
+    letter-spacing: 0.08em;
+    color: $blue;
+    transition: color .5s;
+  }
+}

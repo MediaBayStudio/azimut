@@ -4,6 +4,9 @@
 @import '../../scss/assets/variables';
 
 .hdr {
+  // padding: 50px responsive('1440->1919', '115->520') 0 responsive('1440->1919', '360->435');
+  padding: 50px responsive('1440->1919', '115->200') 0 responsive('1440->1919', '360->460');
+  font-size: responsive('1440->1919', '14->16');
   &__logo {
   }
   &__logo-img {

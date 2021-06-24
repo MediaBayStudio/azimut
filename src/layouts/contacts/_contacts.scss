@@ -2,3 +2,63 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.contacts {
+  padding-top: 60px;
+  // display: flex;
+  // flex-flow: column;
+
+  &__title {
+    margin: 0 0 35px;
+    font: bold 22px/100% Rubik;
+    color: $orange;
+  }
+
+  &__list {
+    padding-left: 20px;
+    max-width: 380px;
+    font: 18px/150% NotoSans;
+    color: $black;
+  }
+
+  &__li {
+    margin: 0 0 35px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    position: relative;
+
+    >.b {
+      color: $darkblue;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &::before {
+      position: absolute;
+      top: 14px;
+      left: -20px;
+      // margin: 0 10px 0 0;
+      // flex-shrink: 0;
+      width: 10px;
+      height: 1px;
+      content: '';
+      background: $orange;
+    }
+  }
+
+  &__tel,
+  &__email {
+    transition: color .5s;
+  }
+
+  &__map {
+    margin: 35px 0 0 -20px;
+    width: 100vw;
+    height: responsive('320->575', '210->350');
+    position: relative;
+    background: url('../img/img-placeholder.svg') center/cover no-repeat;
+  }
+}

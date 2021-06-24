@@ -2,3 +2,90 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.infrastructure {
+  padding: 60px 0 410px;
+  font: 16px/150% NotoSans;
+  color: $black;
+  position: relative;
+
+  &__title {
+    margin: 0 0 20px;
+    font: bold 22px/100% Rubik;
+    color: $orange;
+  }
+
+  &__p {
+    margin: 0 0 30px;
+
+    &:nth-last-of-type(n+2) {}
+
+    &:last-of-type {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__images {
+    display: flex;
+    position: relative;
+    &.slick-slider {
+      flex-flow: column;
+      > .infrastructure-slider__nav {
+        width: 100px;
+        height: 25px;
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        order: 10;
+        background: #fff;
+      }
+    }
+    > .slick-list {
+      overflow: hidden;
+    }
+  }
+
+  &__img-wrap {
+    // width: calc((100% - 20px) / 3);
+    // position: relative;
+
+    &:nth-last-child(n+2) {
+      // margin-right: 10px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    cursor: zoom-in;
+    object-fit: cover;
+    transition: filter .5s;
+  }
+
+  &__map {
+    position: absolute;
+    bottom: 60px;
+    // right: -525px;
+    right: responsive('320->575', '-525->-485');
+    // margin: 40px -20px 0 0;
+    width: 770px;
+    max-width: none;
+    // height: 310px;
+    object-fit: contain;
+  }
+}
+
+
+.infrastructure {
+  &__nav {}
+
+  &__prev,
+  &__next {
+    width: 50%;
+    height: 100%;
+  }
+
+  &__prev {}
+
+  &__next {}
+}

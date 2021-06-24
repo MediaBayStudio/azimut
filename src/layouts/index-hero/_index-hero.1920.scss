@@ -1,0 +1,50 @@
+// assets import
+@import '../../scss/assets/colors';
+@import '../../scss/assets/mixins';
+@import '../../scss/assets/variables';
+
+@supports (offset-path: path("M1 0C1 164 196 279 448 279")) {
+  .index-hero {
+    &__airplane-route {
+      &:nth-child(1) {
+        > .index-hero__route {
+        }
+        > .index-hero__airplane {
+        }
+      }
+      &:nth-child(2) {
+        right: 100px;
+        > .index-hero__route {
+        }
+        > .index-hero__airplane {
+        }
+      }
+      &:nth-child(3) {
+        right: 85px;
+        > .index-hero__route {
+        }
+        > .index-hero__airplane {
+        }
+      }
+    }
+    &__route {
+    }
+    &__airplane {
+    }
+  }
+}
+
+.index-hero {
+  height: auto;
+  &__img {
+    max-width: 700px;
+  }
+  &__title {
+    max-width: 780px;
+    font-size: 54px;
+  }
+
+  &__btn {
+    // margin-top: 90px;
+  }
+}

@@ -2,3 +2,51 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.callback-sect {
+  padding: 60px 0 120px;
+  font: 16px/150% NotoSans;
+  color: $black;
+  &__title {
+    margin: 0 0 40px;
+    font: bold 22px/100% Rubik;
+    color: $orange;
+  }
+}
+
+.callback-form-wrap {
+}
+
+.callback-form {
+  position: relative;
+  overflow: hidden;
+  &__inputs {
+    margin: 0 0 25px;
+  }
+  &__field_name,
+  &__field_tel {
+    margin: 0 0 25px;
+  }
+  &__field_name {
+  }
+  &__field_tel {
+  }
+  &__field_email {
+  }
+  &__field_msg {
+  }
+  &__bottom {
+    margin: 35px auto 0;
+    max-width: 300px;
+  }
+  &__check {
+  }
+  &__btn {
+    margin: 40px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 205px;
+    height: 50px;
+  }
+}

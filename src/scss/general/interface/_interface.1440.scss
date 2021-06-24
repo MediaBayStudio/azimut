@@ -2,3 +2,74 @@
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
+.sections-wrapper {}
+
+@supports (offset-path: path("M1 0C1 164 196 279 448 279")) {
+  .index-airplane-route {
+    // bottom: -285px;
+    bottom: -130px;
+    left: responsive('1440->1919', '-45->212');
+    // bottom: responsive('1440->1919', '-100->-150');
+    transform: scale(1.25);
+  }
+
+  .index-airplane-route__route {
+    width: 1055px;
+    height: 2535px;
+    background-image: url('../img/index-route.1440.svg');
+  }
+
+  .index-airplane-route__airplane {
+    transform: scale(0.75);
+    offset-path: path("M262 0C262 371 1036 14 1056 702C1064.22 984.88 526 1096 526 1390C526 1684 1056 1598 1056 2040C1056 2482 360 2536 0 2536");
+  }
+
+  .about-airplane-route {
+    right: responsive('1440->1919', '30->550');
+  }
+
+  .about-airplane-route__route {
+    width: 1150px;
+    height: 3450px;
+    background-image: url('../img/about-route.1440.svg');
+  }
+
+
+  .about-airplane-route__airplane {
+    offset-path: path("M1150 0C1150 432 735 211 735 434C735 717 340 431 340 725C340 1019 63 810 63 1216C63 1622 683 1240 683 1926C683 2412 63 2350 63 2710C63 3070 667 2770 667 3120C667 3400 182.333 3432 1 3452");
+  }
+}
+
+@supports not (offset-path: path("M1 0C1 164 196 279 448 279")) {
+  .index-airplane-route {
+    transform: none !important;
+    bottom: 0;
+    right: 270px;
+  }
+
+  .index-airplane-route__route,
+  .about-airplane-route__route {
+  }
+
+  .index-airplane-route__airplane,
+  .about-airplane-route__airplane {
+  }
+
+  .about-airplane-route {
+    // transform: scale(1.25);
+    top: responsive('1440->1919', '-45->-315');
+    right: responsive('1440->1919', '45->-140');
+    width: responsive('1440->1919', '1150->2000');
+    height: responsive('1440->1919', '3455->4750');
+    background: url('../img/about-air.1440.svg') center/contain no-repeat;
+  }
+
+  // .about-airplane-route__route {
+  //   display: none;
+  // }
+
+
+  .about-airplane-route__airplane {
+  }
+}

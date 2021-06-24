@@ -2,3 +2,39 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.docs-sect {
+
+  &__title {}
+
+  &__docs {
+    flex-flow: wrap;
+    &.slick-slider {
+      +.docs-sect__nav {}
+
+      .doc {
+        &:nth-last-child(n+2) {}
+      }
+    }
+  }
+
+  &__doc {
+    width: 258px;
+    &:nth-last-child(n+2) {
+      margin: 0 20px 0 0;
+    }
+  }
+
+  &__nav {}
+
+  &__prev {}
+
+  &__next {}
+}
+
+.doc {
+
+  &__img {}
+
+  &__title {}
+}

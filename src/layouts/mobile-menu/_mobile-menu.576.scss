@@ -2,3 +2,49 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.hdr__burger {
+  &-box {}
+
+  &-inner {
+    // height: 3px;
+    &::after,
+    &::before {}
+
+    &::after {}
+
+    &::before {}
+  }
+
+  &.active {
+    .hdr__burger-inner {
+
+      &::before {}
+
+      &::after {}
+    }
+  }
+}
+
+.menu {
+  &.active {}
+
+  &__cnt {
+    max-width: 300px;
+    // padding-left: calc(50% - 268px);
+  }
+
+  &__logo {}
+
+  &__logo-img {}
+
+  &__tel {}
+
+  &__nav {}
+
+  &__nav-list {}
+
+  &__nav-li {
+    &:nth-last-child(n+2) {}
+  }
+}

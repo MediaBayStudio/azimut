@@ -2,3 +2,17 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.sections-wrapper {
+  
+}
+
+.hero-404 {
+  margin-left: calc((50vw - 268px) * -1);
+  &__title {
+  }
+  &__descr {
+  }
+  &__link {
+  }
+}

@@ -2,3 +2,77 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.docs-sect {
+  padding: 60px 0;
+  display: flex;
+  flex-flow: column;
+  &__title {
+    order: 0;
+    margin: 0 0 30px;
+    font: bold 22px/140% Rubik;
+    color: $orange;
+  }
+
+  &__docs {
+    order: 3;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    &.slick-slider {
+      overflow: hidden;
+      +.docs-sect__nav {
+        display: flex;
+      }
+
+      .doc {
+        align-items: center;
+        &:nth-last-child(n+2) {
+          margin: 0 20px 0 0;
+        }
+      }
+    }
+  }
+
+  &__doc {
+    &:nth-last-child(n+2) {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__nav {
+    order: 2;
+    margin: 0 0 30px;
+    display: none;
+  }
+
+  &__prev {}
+
+  &__next {}
+
+  &__prev,
+  &__next {
+    width: 30px;
+    height: 30px;
+    transition: background .5s;
+  }
+}
+
+.doc {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+
+  &__img {
+    object-fit: contain;
+  }
+
+  &__title {
+    margin-top: 20px;
+    max-width: 230px;
+    font: 14px/150% NotoSans;
+    color: $greyblue;
+    text-decoration: underline;
+    transition: text-decoration-color .5s;
+  }
+}

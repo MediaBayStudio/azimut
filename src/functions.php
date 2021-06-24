@@ -2,7 +2,7 @@
 $template_directory = get_template_directory_uri();
 $template_dir = get_template_directory();
 // $wp_content_dir = content_url();
-// $site_url = site_url();
+$site_url = site_url();
 // $is_front_page = is_front_page();
 // $is_404 = is_404();
 // $is_category = is_category();
@@ -18,6 +18,7 @@ $tel_support_2_dry = preg_replace( '/\s/', '', $tel_support_2 );
 
 $address = get_option( 'contacts_address' );
 $full_address = get_option( 'contacts_full_address' );
+$dev_address = get_option( 'contacts_dev_address' );
 $email_1 = get_option( 'contacts_email_1' );
 $email_2 = get_option( 'contacts_email_2' );
 $coords = get_option( 'contacts_coords' );
@@ -28,6 +29,12 @@ if ( strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' ) !== false || strpos( $_SERV
   $webp_support = true; // webp поддерживается
 } else {
   $webp_support = false; // webp не поддерживается
+}
+
+// заворачиваем каждое слово и пробел в отдельный span
+  // чтобы при наведении можно было сделать равномерный border-bottom
+function wrap_words( $start, $text, $end ) {
+  return $start . implode( "{$end}{$start} {$end}{$start}", explode( ' ', $text ) ) . $end;
 }
 
 // Удаление разных скриптов и стилей от wp
@@ -55,3 +62,5 @@ require $template_dir . '/inc/get-sections.php';
 // Регистрация новых типов - продукция и категории
 require $template_dir . '/inc/register-post-types-and-taxonomies.php';
 
+// Запрос записи для открытия попапа
+require $template_dir . '/inc/get-post.php';

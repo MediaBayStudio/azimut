@@ -1,0 +1,33 @@
+// assets import
+@import '../../scss/assets/colors';
+@import '../../scss/assets/mixins';
+@import '../../scss/assets/variables';
+
+.product-popup {
+
+  &.active {}
+
+  &.loading {
+    .loader {}
+  }
+
+  &__cnt {}
+
+  &__close {
+
+    &:active {}
+
+    &-svg {}
+
+    &-path {}
+  }
+
+  &__title {}
+
+  &__descr {}
+
+  &__nav {}
+
+  &__prev,
+  &__next {}
+}

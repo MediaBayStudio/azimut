@@ -2,3 +2,46 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.contacts-hero {
+  padding-top: 105px;
+  // display: flex;
+  // flex-flow: column;
+  font: 16px/150% NotoSans;
+  color: $black;
+  &__img {
+    margin-top: 50px;
+    width: 280px;
+    height: 205px;
+    object-fit: cover;
+    order: 9;
+  }
+  &__title {
+    margin: 0 0 15px;
+    font: bold 22px/100% Rubik;
+    color: $orange;
+  }
+  &__list {
+    max-width: 330px;
+  }
+  &__li {
+    > .b {
+      display: block;
+      color: $darkblue;
+    }
+    &:nth-last-child(n+2) {
+      margin: 0 0 30px;
+    }
+  }
+  &__tel,
+  &__email {
+    transition: color .5s;
+  }
+  &__map {
+    width: 100vw;    
+    height: responsive('320->575', '170->220');
+    // order: 10;
+    margin: 30px 0 0 -20px;
+    background: url('../img/img-placeholder.svg') center/cover no-repeat;
+  }
+}

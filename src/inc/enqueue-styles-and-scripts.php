@@ -30,26 +30,33 @@ function enqueue_style( $style_name, $widths ) {
 add_action( 'wp_enqueue_scripts', function() {
   global $template_directory;
 
-  $screen_widths = ['0', '420', '576', '768', '1024', '1440']; // на каких экранах подключать css
+  $screen_widths = ['0', '420', '576', '768', '1024', '1440', '1920']; // на каких экранах подключать css
 
   wp_enqueue_style( 'theme-style', get_stylesheet_uri(), [], null );        // подключить стиль темы (default)
 
   // подключаем стили с помощью своей функции
   enqueue_style( 'style', $screen_widths );
 
+  if ( is_page( 'contacts' ) ) {
+    enqueue_style( 'fancybox.min', '' );
+  }
 
   enqueue_style( 'hover', '' ); // подключаем стили для эффектов при наведении
 
   // Подключаем скрипты циклом
   $scripts = [
-				'slick.min',
-			'lazy.min',
-			'MobileMenu.min',
-			'svg4everybody.min',
-			'main'
-		];
+		'slick.min',
+		'lazy.min',
+		'Popup.min',
+		'svg4everybody.min',
+    'fancybox.min',
+		'main'
+	];
 
   foreach ( $scripts as $script_name ) {
+    if ( !is_page( 'contacts' ) && $script_name === 'fancybox.min' ) {
+      continue;
+    }
     wp_enqueue_script( "{$script_name}", $template_directory . "/js/{$script_name}.js", [], null );
   }
   
@@ -66,13 +73,14 @@ add_action( 'wp_enqueue_scripts', function() {
 } );
 
 // Убираем id и type в тегах script, добавляем нужным атрибут defer
-  add_filter( 'script_loader_tag',   function( $html, $handle ) {
+  add_filter( 'script_loader_tag', function( $html, $handle ) {
     switch ( $handle ) {
       case 'slick.min':
       case 'lazy.min':
-      case 'MobileMenu.min':
+      case 'Popup.min':
       case 'svg4everybody.min':
       case 'main':
+      case 'fancybox.min':
       case 'contact-form-7':
         $html = str_replace( ' src', ' defer src', $html );
         break;
@@ -87,10 +95,9 @@ add_action( 'wp_enqueue_scripts', function() {
 // Убираем id и type в тегах style
   add_filter( 'style_loader_tag', function( $html, $handle ) {
     // Подключаем стили гутенберга только в админке
-    // global $is_admin;
-    // if ( $hanlde === 'wp-block-library' && !$is_admin ) {
-    //   return '';
-    // }
+    if ( (!is_single() && !is_admin() ) && $handle === 'wp-block-library' ) {
+      return '';
+    }
     $html = str_replace( " id='$handle-css' ", '', $html );
     $html = str_replace( " type='text/css'", '', $html );
     return $html;
